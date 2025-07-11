@@ -2,21 +2,23 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "gilroy",sans-serif;
+  font-family: "gilroy", sans-serif;
 }
+
 html,
 body {
   height: 100%;
   width: 100%;
 }
-nav{
-  color:white;
+
+nav {
+  color: rgb(220, 158, 64);
   font-size: 30px;
   position: absolute;
   top: 0;
   left: 0;
-  color: rgb(220, 158, 64);
 }
+
 .container {
   width: 100%;
   height: 100vh;
@@ -26,28 +28,36 @@ nav{
   align-items: center;
   justify-content: center;
   line-height: 1.5;
+  padding: 20px;
 }
+
 .content {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; /* ⭐ PURE content ko center me rakhta hai */
 }
+
 .container h1 {
   color: #dadada;
   font-size: 80px;
   white-space: nowrap;
+  text-align: center;
 }
+
 span {
   color: white;
   font-size: 80px;
-  
 }
 
 .button-group {
   display: flex;
+  flex-direction: row;
   gap: 25px;
   margin: 10px;
+  flex-wrap: wrap; /* ⭐ Chhoti screen me wrap ho sake */
+  justify-content: center; /* ⭐ Horizontal center */
 }
+
 .button-group button {
   padding: 8px 20px;
   border-radius: 20px;
@@ -57,4 +67,30 @@ span {
   background: #fff;
   color: #000;
   font-size: 18px;
+}
+
+/* ✅ ✅ ✅ Responsive code: Always at the end ✅ ✅ ✅ */
+@media (max-width: 768px) {
+  nav {
+    font-size: 20px;
+  }
+
+  .container h1 {
+    font-size: 40px; /* Heading chhoti */
+  }
+
+  span {
+    font-size: 40px; /* Timer chhota */
+  }
+
+  .button-group {
+    gap: 15px; /* Gap kam */
+    flex-wrap: wrap; /* Wrap allow */
+    justify-content: center; /* ⭐ Wrap hone par bhi center */
+  }
+
+  .button-group button {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
 }
